@@ -7,6 +7,7 @@ import { traeBadgePlugin } from 'vite-plugin-trae-solo-badge';
 export default defineConfig({
   base: '/qiaojiaxibei/',
   build: {
+    outDir: 'docs',
     sourcemap: 'hidden',
   },
   plugins: [
