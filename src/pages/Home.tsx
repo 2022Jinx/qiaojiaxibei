@@ -121,12 +121,8 @@ const Home = () => {
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">关于我们</h2>
-                <p className="text-lg text-gray-700 mb-4">
-                  乔家喜被专注于各类被子的加工与定制，提供棉花被、大豆被、羽绒被、蚕丝被等多种产品，支持现场定做和私人订制。
-                </p>
-                <p className="text-lg text-gray-700 mb-6">
-                  我们坚持使用优质原材料，传统手工工艺，为您打造温暖舒适的睡眠体验。
-                </p>
+                <p className="text-lg text-gray-700 mb-4">乔家喜被专注于各类被子的加工与定制，提供棉花被、大豆被、羽绒被、蚕丝被等多种产品，支持现场定做和私人订制。</p>
+                <p className="text-lg text-gray-700 mb-6">我们坚持使用优质原材料，传统手工工艺，为您打造温暖舒适的睡眠体验。</p>
                 <div className="flex flex-col gap-4">
                   <a href="tel:18326180320" className="bg-blue-600 text-white text-xl font-medium py-3 px-6 rounded-md text-center hover:bg-blue-700 transition-colors">
                     立即联系：183-2618-0320
@@ -137,12 +133,24 @@ const Home = () => {
                 </div>
               </div>
               <div className="md:w-1/2">
-                <img 
-                  src={shopkeeperImage} 
-                  alt="店主照片" 
-                  className="w-full h-auto rounded-lg shadow-md"
-                  loading="lazy"
-                />
+                <div className="relative w-full h-80 bg-gray-200 rounded-lg overflow-hidden">
+                  <img 
+                    src={shopkeeperImage} 
+                    alt="店主照片" 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    style={{ transition: 'opacity 0.3s ease-in-out', opacity: 0 }}
+                    onLoad={(e) => {
+                      (e.target as HTMLImageElement).style.opacity = '1';
+                    }}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg className="w-12 h-12 text-gray-400 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -209,12 +217,24 @@ const Home = () => {
                   className="border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                   onClick={() => openProductModal(product)}
                 >
-                  <img 
-                    src={product.image} 
-                    alt={product.name} 
-                    className="w-full h-64 object-cover"
-                    loading="lazy"
-                  />
+                  <div className="relative w-full h-64 bg-gray-200 overflow-hidden">
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      style={{ transition: 'opacity 0.3s ease-in-out', opacity: 0 }}
+                      onLoad={(e) => {
+                        (e.target as HTMLImageElement).style.opacity = '1';
+                      }}
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-gray-400 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    </div>
+                  </div>
                   <div className="p-4">
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
                     <p className="text-lg text-gray-700 mb-3">{product.description}</p>
@@ -249,12 +269,24 @@ const Home = () => {
                   className="border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                   onClick={() => openProductModal(product)}
                 >
-                  <img 
-                    src={product.image} 
-                    alt={product.name} 
-                    className="w-full h-64 object-cover"
-                    loading="lazy"
-                  />
+                  <div className="relative w-full h-64 bg-gray-200 overflow-hidden">
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      style={{ transition: 'opacity 0.3s ease-in-out', opacity: 0 }}
+                      onLoad={(e) => {
+                        (e.target as HTMLImageElement).style.opacity = '1';
+                      }}
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-gray-400 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    </div>
+                  </div>
                   <div className="p-4">
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
                     <p className="text-lg text-gray-700 mb-3">{product.description}</p>
@@ -341,7 +373,7 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <h3 className="text-2xl font-bold mb-2">乔家喜被</h3>
+              <h3 className="text-2xl font-bold mb-2">&nbsp; &nbsp; &nbsp;乔家喜被</h3>
               <p className="text-gray-300">专注被子加工与定制</p>
             </div>
             <div className="text-center md:text-right">
