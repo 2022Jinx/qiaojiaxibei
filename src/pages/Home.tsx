@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import shopkeeperImage from '../assets/人物.png'
+import cottonImage from '../assets/生成精美蚕丝图片.png'
+import soybeanImage from '../assets/生成精美蚕丝图片-2.png'
+import downImage from '../assets/生成精美蚕丝图片-3.png'
+import silkImage from '../assets/生成精美蚕丝图片-3.png'
 
 // 产品数据
 const products = [
@@ -7,25 +11,25 @@ const products = [
     id: 1,
     name: '棉花被',
     description: '天然棉花填充，柔软亲肤，保暖舒适',
-    image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cotton%20quilt%20bedding%20product%20photo%20high%20quality&image_size=square'
+    image: cottonImage
   },
   {
     id: 2,
     name: '大豆被',
     description: '大豆纤维填充，轻盈保暖，透气性好',
-    image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=soybean%20fiber%20quilt%20bedding%20product%20photo%20high%20quality&image_size=square'
+    image: soybeanImage
   },
   {
     id: 3,
     name: '羽绒被',
     description: '90%白鸭绒填充，保暖性强，轻盈舒适',
-    image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=down%20quilt%20bedding%20product%20photo%20high%20quality&image_size=square'
+    image: downImage
   },
   {
     id: 4,
     name: '蚕丝被',
     description: '100%天然蚕丝填充，亲肤透气，恒温保暖',
-    image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=silk%20quilt%20bedding%20product%20photo%20high%20quality&image_size=square'
+    image: silkImage
   }
 ]
 
@@ -133,23 +137,13 @@ const Home = () => {
                 </div>
               </div>
               <div className="md:w-1/2">
-                <div className="relative w-full h-80 bg-gray-200 rounded-lg overflow-hidden">
+                <div className="w-full h-80 bg-gray-200 rounded-lg overflow-hidden">
                   <img 
                     src={shopkeeperImage} 
                     alt="店主照片" 
                     className="w-full h-full object-cover"
-                    loading="lazy"
-                    style={{ transition: 'opacity 0.3s ease-in-out', opacity: 0 }}
-                    onLoad={(e) => {
-                      (e.target as HTMLImageElement).style.opacity = '1';
-                    }}
+                    loading="eager"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <svg className="w-12 h-12 text-gray-400 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                  </div>
                 </div>
               </div>
             </div>
@@ -217,23 +211,13 @@ const Home = () => {
                   className="border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                   onClick={() => openProductModal(product)}
                 >
-                  <div className="relative w-full h-64 bg-gray-200 overflow-hidden">
+                  <div className="w-full h-64 bg-gray-200 overflow-hidden">
                     <img 
                       src={product.image} 
                       alt={product.name} 
                       className="w-full h-full object-cover"
                       loading="lazy"
-                      style={{ transition: 'opacity 0.3s ease-in-out', opacity: 0 }}
-                      onLoad={(e) => {
-                        (e.target as HTMLImageElement).style.opacity = '1';
-                      }}
                     />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <svg className="w-8 h-8 text-gray-400 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                    </div>
                   </div>
                   <div className="p-4">
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
@@ -269,23 +253,13 @@ const Home = () => {
                   className="border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                   onClick={() => openProductModal(product)}
                 >
-                  <div className="relative w-full h-64 bg-gray-200 overflow-hidden">
+                  <div className="w-full h-64 bg-gray-200 overflow-hidden">
                     <img 
                       src={product.image} 
                       alt={product.name} 
                       className="w-full h-full object-cover"
                       loading="lazy"
-                      style={{ transition: 'opacity 0.3s ease-in-out', opacity: 0 }}
-                      onLoad={(e) => {
-                        (e.target as HTMLImageElement).style.opacity = '1';
-                      }}
                     />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <svg className="w-8 h-8 text-gray-400 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                    </div>
                   </div>
                   <div className="p-4">
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
