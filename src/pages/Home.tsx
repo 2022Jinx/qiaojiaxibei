@@ -3,7 +3,7 @@ import shopkeeperImage from '../assets/人物.png'
 import cottonImage from '../assets/生成精美蚕丝图片.png'
 import soybeanImage from '../assets/生成精美蚕丝图片-2.png'
 import downImage from '../assets/生成精美蚕丝图片-3.png'
-import silkImage from '../assets/生成精美蚕丝图片-3.png'
+import silkImage from '../assets/生成精美蚕丝图片.png'
 
 // 产品数据
 const products = [
