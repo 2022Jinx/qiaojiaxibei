@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import shopkeeperImage from '../assets/人物.png'
-import cottonImage from '../assets/生成精美蚕丝图片.png'
-import soybeanImage from '../assets/生成精美蚕丝图片-2.png'
-import downImage from '../assets/生成精美蚕丝图片-3.png'
-import silkImage from '../assets/生成精美蚕丝图片.png'
+import cottonImage from '../assets/棉花被.png'
+import soybeanImage from '../assets/大豆纤维被产品图生成.png'
+import downImage from '../assets/羽绒被.png'
+import silkImage from '../assets/蚕丝被.png'
 
 // 产品数据
 const products = [
